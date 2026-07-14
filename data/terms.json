@@ -1,0 +1,543 @@
+[
+  {
+    "id": "ferritin",
+    "term": "フェリチン",
+    "reading": "ふぇりちん",
+    "abbr": "Ferritin",
+    "unit": "ng/mL",
+    "category": "iron",
+    "reference": "男性 30–320 / 女性 10–120 程度（施設により幅あり）",
+    "optimal": "精密栄養学では男女とも概ね 50–150 を目安とする考え方がある。低すぎても高すぎても注意。",
+    "summary": "体内の貯蔵鉄を反映する指標。基準内でも低め（かくれ貧血）だと不調の原因になりうる。",
+    "description": "フェリチンは鉄を内部に貯蔵するタンパク質で、血中フェリチン値は体の貯蔵鉄量とよく相関する。ヘモグロビンが正常でもフェリチンが低い『潜在性鉄欠乏（かくれ貧血）』では、疲労感・冷え・抜け毛・集中力低下などが起こりうる。一方、フェリチンは急性期蛋白でもあり、炎症・感染・肝障害・悪性腫瘍などがあると鉄の状態と無関係に高値になる点に注意する。",
+    "high": "鉄過剰、炎症・感染（CRP高値を伴う）、肝障害、飲酒、悪性腫瘍などで上昇。炎症時は貯蔵鉄を過大評価しやすい。",
+    "low": "鉄欠乏の最も鋭敏な指標。ヘモグロビンが正常でも低下していれば潜在性鉄欠乏を示唆する。月経・妊娠・出血・吸収不良で低下。",
+    "nutrients": ["鉄", "ビタミンC", "たんぱく質"],
+    "related": ["serum-iron", "tsat", "tibc", "uibc", "hemoglobin", "mcv", "crp"],
+    "tags": ["貧血", "かくれ貧血", "鉄欠乏", "炎症", "急性期蛋白"],
+    "sources": [
+      { "title": "栄養状態を調べる血液検査 | プラスウェルネス", "url": "https://www.pluswellness.com/dictionary/checkup/004006.html" },
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  },
+  {
+    "id": "serum-iron",
+    "term": "血清鉄",
+    "reading": "けっせいてつ",
+    "abbr": "Fe / Serum Iron",
+    "unit": "µg/dL",
+    "category": "iron",
+    "reference": "男性 60–200 / 女性 50–170 程度",
+    "optimal": "日内変動が大きく単独評価には向かない。TIBC・フェリチン・TSATと併せて解釈する。",
+    "summary": "血液中を輸送されている鉄の量。日内変動が大きく、単独では鉄状態を判断しづらい。",
+    "description": "血清鉄はトランスフェリンに結合して血中を運ばれる鉄の濃度。朝高く夕方低いなど日内変動が大きく、食事の影響も受けるため、単独ではなくTIBC（総鉄結合能）やフェリチン、TSAT（トランスフェリン飽和度）と組み合わせて評価する。鉄欠乏では低下、鉄過剰や溶血で上昇する。",
+    "high": "鉄過剰症、溶血性貧血、肝障害、鉄剤の過剰摂取などで上昇。",
+    "low": "鉄欠乏、慢性炎症、感染時に低下。",
+    "nutrients": ["鉄"],
+    "related": ["ferritin", "tibc", "uibc", "tsat", "hemoglobin"],
+    "tags": ["鉄欠乏", "鉄過剰"],
+    "sources": [
+      { "title": "血液検査からわかること | あんどう口腔クリニック", "url": "https://orthomolecular-health.jp/kensa/" }
+    ]
+  },
+  {
+    "id": "tibc",
+    "term": "総鉄結合能（TIBC）",
+    "reading": "そうてつけつごうのう",
+    "abbr": "TIBC",
+    "unit": "µg/dL",
+    "category": "iron",
+    "reference": "250–450 程度",
+    "optimal": "鉄欠乏で上昇（体が鉄を欲している状態）。血清鉄・フェリチンと合わせて解釈。",
+    "summary": "血液が結合できる鉄の総量。鉄が不足すると上昇する（＝運び屋が増える）。",
+    "description": "TIBCは血中のトランスフェリンが結合しうる鉄の総量を表す。鉄が不足すると体はトランスフェリンを増やして鉄をかき集めようとするため、鉄欠乏ではTIBCが上昇する。TIBC = 血清鉄 + UIBC（不飽和鉄結合能）の関係にあり、TSAT（トランスフェリン飽和度）= 血清鉄 ÷ TIBC × 100 で算出される。",
+    "high": "鉄欠乏、妊娠、経口避妊薬などで上昇。",
+    "low": "慢性炎症、低栄養（トランスフェリン低下）、肝障害、鉄過剰で低下。",
+    "nutrients": ["鉄", "たんぱく質"],
+    "related": ["uibc", "serum-iron", "tsat", "ferritin"],
+    "tags": ["鉄欠乏", "トランスフェリン"],
+    "sources": [
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  },
+  {
+    "id": "uibc",
+    "term": "不飽和鉄結合能（UIBC）",
+    "reading": "ふほうわてつけつごうのう",
+    "abbr": "UIBC",
+    "unit": "µg/dL",
+    "category": "iron",
+    "reference": "施設により幅あり（TIBC − 血清鉄で算出）",
+    "optimal": "TIBCや血清鉄と一体で解釈する補助指標。",
+    "summary": "まだ鉄と結合していないトランスフェリンの余力。TIBC − 血清鉄で求まる。",
+    "description": "UIBCは、鉄と結合していない（余っている）トランスフェリンが結合できる鉄の量で、UIBC = TIBC − 血清鉄 の関係にある。鉄欠乏では血清鉄が下がりUIBCが上昇する。TIBC・血清鉄・フェリチンと合わせて鉄動態を把握するための補助指標。",
+    "high": "鉄欠乏で上昇。",
+    "low": "鉄過剰、慢性炎症で低下。",
+    "nutrients": ["鉄"],
+    "related": ["tibc", "serum-iron", "tsat", "ferritin"],
+    "tags": ["鉄欠乏", "トランスフェリン"],
+    "sources": [
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  },
+  {
+    "id": "tsat",
+    "term": "トランスフェリン飽和度（TSAT）",
+    "reading": "とらんすふぇりんほうわど",
+    "abbr": "TSAT / Fe/TIBC",
+    "unit": "%",
+    "category": "iron",
+    "reference": "20–45% 程度",
+    "optimal": "概ね 20% 未満は鉄欠乏、45%超は鉄過剰を疑う。フェリチンと組み合わせると精度が高い。",
+    "summary": "トランスフェリンのうち鉄が結合している割合。鉄欠乏・鉄過剰の判定に有用。",
+    "description": "TSAT（トランスフェリン飽和度）= 血清鉄 ÷ TIBC × 100 で計算し、鉄を運ぶトランスフェリンがどれだけ鉄で埋まっているかを示す。低値は鉄欠乏、高値は鉄過剰を示唆し、フェリチンと組み合わせると鉄欠乏（低TSAT×低フェリチン）と炎症性貧血（低TSAT×正常〜高フェリチン）の鑑別に役立つ。",
+    "high": "鉄過剰症（ヘモクロマトーシス）、溶血、肝障害などで上昇。",
+    "low": "鉄欠乏、慢性炎症で低下。",
+    "nutrients": ["鉄"],
+    "related": ["serum-iron", "tibc", "uibc", "ferritin", "hemoglobin"],
+    "tags": ["鉄欠乏", "鉄過剰", "計算指標"],
+    "sources": [
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  },
+  {
+    "id": "hemoglobin",
+    "term": "ヘモグロビン",
+    "reading": "へもぐろびん",
+    "abbr": "Hb / Hgb",
+    "unit": "g/dL",
+    "category": "cbc",
+    "reference": "男性 13.5–17.5 / 女性 11.5–15.0 程度",
+    "optimal": "基準内でもMCVやフェリチンが低ければ鉄欠乏の初期を疑う。",
+    "summary": "赤血球の中で酸素を運ぶ色素タンパク。低下すると貧血。",
+    "description": "ヘモグロビンは赤血球に含まれ鉄を核として酸素を運搬する。低下すると貧血と判定され、動悸・息切れ・倦怠感の原因になる。ヘモグロビンが正常でもMCV（赤血球の大きさ）が小さめ、フェリチンが低ければ鉄欠乏の初期段階（かくれ貧血）を疑う。ビタミンB12・葉酸欠乏では大球性貧血となりMCVが上昇する。",
+    "high": "多血症、脱水（血液濃縮）、喫煙、高地滞在などで上昇。",
+    "low": "鉄欠乏性貧血、ビタミンB12・葉酸欠乏、出血、慢性疾患による貧血で低下。",
+    "nutrients": ["鉄", "ビタミンB12", "葉酸", "たんぱく質"],
+    "related": ["mcv", "rbc", "ferritin", "serum-iron", "tsat"],
+    "tags": ["貧血", "鉄欠乏"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "mcv",
+    "term": "平均赤血球容積（MCV）",
+    "reading": "へいきんせっけっきゅうようせき",
+    "abbr": "MCV",
+    "unit": "fL",
+    "category": "cbc",
+    "reference": "80–100 程度",
+    "optimal": "鉄欠乏では低下傾向、B12・葉酸欠乏では上昇傾向。貧血の原因鑑別に有用。",
+    "summary": "赤血球1個あたりの大きさ。貧血のタイプ（小球性・大球性）を見分ける。",
+    "description": "MCVは赤血球の平均的な大きさを示し、貧血の原因を分類するのに使う。80未満の小球性は鉄欠乏やサラセミアで多く、100超の大球性はビタミンB12・葉酸欠乏やアルコール多飲でみられる。正球性（80–100）でも鉄欠乏の初期やB12/葉酸欠乏が混在すると正常範囲に見えることがあるため、フェリチンなどと併せて評価する。",
+    "high": "ビタミンB12・葉酸欠乏、アルコール多飲、甲状腺機能低下、肝障害で上昇。",
+    "low": "鉄欠乏、サラセミア、慢性炎症で低下。",
+    "nutrients": ["鉄", "ビタミンB12", "葉酸"],
+    "related": ["hemoglobin", "rbc", "ferritin"],
+    "tags": ["貧血", "小球性", "大球性"],
+    "sources": [
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  },
+  {
+    "id": "rbc",
+    "term": "赤血球数（RBC）",
+    "reading": "せっけっきゅうすう",
+    "abbr": "RBC",
+    "unit": "×10⁴/µL",
+    "category": "cbc",
+    "reference": "男性 430–570 / 女性 380–500 程度",
+    "optimal": "ヘモグロビン・MCVと合わせて貧血・多血を評価する。",
+    "summary": "血液中の赤血球の数。ヘモグロビンやMCVと合わせて貧血を評価する。",
+    "description": "RBCは血液単位量あたりの赤血球の数。ヘモグロビンやヘマトクリット、MCVと組み合わせて貧血や多血症を評価する。鉄欠乏では赤血球が小さくなり（MCV低下）、数の割にヘモグロビンが低くなる。脱水では血液が濃縮して見かけ上高くなる。",
+    "high": "多血症、脱水、喫煙、高地滞在で上昇。",
+    "low": "各種貧血、出血、造血障害で低下。",
+    "nutrients": ["鉄", "ビタミンB12", "葉酸", "たんぱく質"],
+    "related": ["hemoglobin", "mcv"],
+    "tags": ["貧血", "多血"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "platelet",
+    "term": "血小板数（PLT）",
+    "reading": "けっしょうばんすう",
+    "abbr": "PLT / Plt",
+    "unit": "×10⁴/µL",
+    "category": "cbc",
+    "reference": "15–35 程度",
+    "optimal": "肝機能や慢性炎症の評価に補助的に用いる。",
+    "summary": "止血に関わる血液成分。肝疾患や炎症、鉄欠乏でも変動する。",
+    "description": "血小板は出血時に凝集して止血を担う。慢性肝疾患や脾機能亢進では低下し、鉄欠乏や炎症・感染では反応性に増加することがある。極端な高値・低値は血液疾患の可能性があり精査が必要。栄養評価では肝機能や炎症の状態を横断的に見る補助指標として扱う。",
+    "high": "鉄欠乏、炎症・感染、脾摘後、血液疾患で上昇。",
+    "low": "肝硬変、脾機能亢進、ウイルス感染、一部の薬剤や自己免疫で低下。",
+    "nutrients": ["鉄", "ビタミンB12", "葉酸"],
+    "related": ["ast", "alt", "ferritin", "crp"],
+    "tags": ["止血", "肝疾患", "炎症"],
+    "sources": [
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  },
+  {
+    "id": "total-protein",
+    "term": "総蛋白（TP）",
+    "reading": "そうたんぱく",
+    "abbr": "TP",
+    "unit": "g/dL",
+    "category": "protein",
+    "reference": "6.6–8.1 程度",
+    "optimal": "アルブミンとグロブリンの内訳（A/G比）と合わせて栄養・炎症を評価。",
+    "summary": "血液中のタンパク質の総量。主にアルブミンとグロブリンから成る。",
+    "description": "総蛋白は血清中の全タンパク質量で、大部分はアルブミンと免疫グロブリン。栄養状態・肝合成能・水分状態・炎症を反映する。アルブミンとグロブリンの比（A/G比）が下がるときは、アルブミン低下（低栄養・肝障害）かグロブリン上昇（慢性炎症・感染）を意味する。脱水では濃縮して高く、低栄養やネフローゼでは低くなる。",
+    "high": "脱水（血液濃縮）、慢性炎症・感染、多発性骨髄腫などで上昇。",
+    "low": "低栄養、肝合成低下、ネフローゼ症候群、吸収不良で低下。",
+    "nutrients": ["たんぱく質"],
+    "related": ["albumin", "che", "bun"],
+    "tags": ["栄養状態", "たんぱく質"],
+    "sources": [
+      { "title": "TP (総蛋白) | 聖隷横浜病院", "url": "https://www.seirei.or.jp/yokohama/section/department/inspection-division/viewpoint/upload/20170817-180748-1328.pdf" }
+    ]
+  },
+  {
+    "id": "albumin",
+    "term": "アルブミン",
+    "reading": "あるぶみん",
+    "abbr": "Alb",
+    "unit": "g/dL",
+    "category": "protein",
+    "reference": "4.1–5.1 程度",
+    "optimal": "精密栄養学では 4.5 前後を目安に、たんぱく質の充足と消化吸収を評価する考え方がある。",
+    "summary": "肝臓で作られる主要な血漿タンパク。長期的なたんぱく栄養状態を反映する。",
+    "description": "アルブミンは肝臓で合成される最も多い血漿タンパクで、浸透圧の維持や物質の運搬を担う。半減期が約20日と長いため、比較的長期のたんぱく栄養状態を反映する。低栄養・消化吸収不良・肝合成低下・炎症・ネフローゼで低下する。オーソモレキュラー栄養療法では、基準内でもやや低め（例: 4.4未満）だとたんぱく質の摂取・消化吸収不足を疑うことがある。",
+    "high": "脱水（血液濃縮）でみかけ上高値。真の高値は通常みられない。",
+    "low": "低栄養、たんぱく消化吸収不良、肝障害、炎症、ネフローゼ症候群で低下。",
+    "nutrients": ["たんぱく質", "亜鉛"],
+    "related": ["total-protein", "che", "bun", "crp"],
+    "tags": ["栄養状態", "たんぱく質", "消化吸収"],
+    "sources": [
+      { "title": "栄養判定に用いる血液検査 | 国立長寿医療研究センター", "url": "https://www.ncgg.go.jp/hospital/iryokankei/nst/25.html" }
+    ]
+  },
+  {
+    "id": "che",
+    "term": "コリンエステラーゼ（ChE）",
+    "reading": "こりんえすてらーぜ",
+    "abbr": "ChE",
+    "unit": "U/L",
+    "category": "protein",
+    "reference": "施設により幅あり（男女差あり）",
+    "optimal": "アルブミンと並ぶ栄養・肝合成の指標。低栄養で低下、脂肪肝で上昇。",
+    "summary": "肝臓で作られる酵素。たんぱく栄養状態と肝合成能を反映する。",
+    "description": "コリンエステラーゼは肝臓で合成される酵素で、アルブミンと同様に栄養状態・肝合成能を反映する。低栄養や肝障害で低下し、過栄養・脂肪肝・ネフローゼでは上昇することがある。アルブミンと合わせてたんぱく栄養の評価に用いられる。",
+    "high": "脂肪肝、過栄養、ネフローゼ症候群、糖尿病で上昇。",
+    "low": "低栄養、肝障害・肝硬変、有機リン中毒で低下。",
+    "nutrients": ["たんぱく質"],
+    "related": ["albumin", "total-protein", "ast", "alt"],
+    "tags": ["栄養状態", "肝合成", "脂肪肝"],
+    "sources": [
+      { "title": "栄養判定に用いる血液検査 | 国立長寿医療研究センター", "url": "https://www.ncgg.go.jp/hospital/iryokankei/nst/25.html" }
+    ]
+  },
+  {
+    "id": "bun",
+    "term": "尿素窒素（BUN）",
+    "reading": "にょうそちっそ",
+    "abbr": "BUN / UN",
+    "unit": "mg/dL",
+    "category": "kidney",
+    "reference": "8–20 程度",
+    "optimal": "精密栄養学では低値（例: 10未満）でたんぱく質摂取不足を、高値で脱水や消化管出血を疑う。",
+    "summary": "たんぱく質代謝の最終産物。腎機能だけでなくたんぱく摂取量・脱水も反映する。",
+    "description": "BUNは体内でたんぱく質が分解されてできる尿素に含まれる窒素で、腎臓から排泄される。腎機能が低下すると上昇するが、脱水・高たんぱく食・消化管出血・異化亢進でも上昇し、逆にたんぱく質摂取不足や肝機能低下では低下する。クレアチニンと合わせて解釈し、栄養面では低BUNがたんぱく不足のサインになることがある。",
+    "high": "腎機能低下、脱水、高たんぱく食、消化管出血、異化亢進で上昇。",
+    "low": "たんぱく質摂取不足、肝機能低下、過剰な水分で低下。",
+    "nutrients": ["たんぱく質"],
+    "related": ["albumin", "total-protein"],
+    "tags": ["腎機能", "たんぱく質", "脱水"],
+    "sources": [
+      { "title": "栄養状態を調べる血液検査 | プラスウェルネス", "url": "https://www.pluswellness.com/dictionary/checkup/004006.html" }
+    ]
+  },
+  {
+    "id": "ast",
+    "term": "AST（GOT）",
+    "reading": "えーえすてぃー",
+    "abbr": "AST / GOT",
+    "unit": "U/L",
+    "category": "liver",
+    "reference": "10–30 程度",
+    "optimal": "ALTとの比（AST/ALT）やビタミンB6充足の評価に用いる。低すぎる場合はB6不足を疑う考え方がある。",
+    "summary": "肝臓・心臓・筋肉に多い酵素。細胞が壊れると血中に漏れ出て上昇する。",
+    "description": "AST（旧称GOT）は肝細胞・心筋・骨格筋などに含まれる酵素で、これらの細胞が障害を受けると血中に漏れて上昇する。ALTと合わせて肝機能を評価し、AST/ALT比はアルコール性肝障害や肝硬変、脂肪肝の鑑別に用いる。ASTとALTはビタミンB6を補酵素とするため、精密栄養学では両者が低すぎる場合にB6不足を疑うことがある。",
+    "high": "肝炎、脂肪肝、アルコール、心筋梗塞、筋肉障害、激しい運動で上昇。",
+    "low": "ビタミンB6不足でみられることがある（栄養学的解釈）。",
+    "nutrients": ["ビタミンB6"],
+    "related": ["alt", "ggtp", "che", "platelet"],
+    "tags": ["肝機能", "ビタミンB6", "酵素"],
+    "sources": [
+      { "title": "血液検査からわかること | あんどう口腔クリニック", "url": "https://orthomolecular-health.jp/kensa/" }
+    ]
+  },
+  {
+    "id": "alt",
+    "term": "ALT（GPT）",
+    "reading": "えーえるてぃー",
+    "abbr": "ALT / GPT",
+    "unit": "U/L",
+    "category": "liver",
+    "reference": "10–30 程度",
+    "optimal": "ASTより肝特異的。ALT>ASTで脂肪肝、低値でB6不足を疑う考え方がある。",
+    "summary": "主に肝臓に多い酵素。肝細胞の障害でより特異的に上昇する。",
+    "description": "ALT（旧称GPT）は主に肝臓に存在する酵素で、ASTより肝特異性が高い。ALTがASTより高いときは脂肪肝や慢性肝炎を、ASTがALTより高いときはアルコール性肝障害や肝硬変を示唆する。ASTと同様ビタミンB6を補酵素とし、両者が非常に低い場合はB6不足を疑うことがある。",
+    "high": "脂肪肝、ウイルス性肝炎、薬剤性肝障害、肥満で上昇。",
+    "low": "ビタミンB6不足でみられることがある（栄養学的解釈）。",
+    "nutrients": ["ビタミンB6"],
+    "related": ["ast", "ggtp", "che", "hba1c"],
+    "tags": ["肝機能", "脂肪肝", "ビタミンB6"],
+    "sources": [
+      { "title": "血液検査からわかること | あんどう口腔クリニック", "url": "https://orthomolecular-health.jp/kensa/" }
+    ]
+  },
+  {
+    "id": "ggtp",
+    "term": "γ-GTP（γ-GT）",
+    "reading": "がんまじーてぃーぴー",
+    "abbr": "γ-GTP / GGT",
+    "unit": "U/L",
+    "category": "liver",
+    "reference": "男性 〜50 / 女性 〜30 程度",
+    "optimal": "アルコールや胆道系に鋭敏。酸化ストレスやグルタチオン消費の指標として見る考え方もある。",
+    "summary": "アルコールや胆道系の障害に鋭敏な酵素。飲酒量の指標にもなる。",
+    "description": "γ-GTPは肝臓・胆道系に多い酵素で、アルコール摂取や胆汁うっ滞、脂肪肝、薬剤で上昇する。飲酒習慣に鋭敏に反応するため生活習慣の指標として有用。γ-GTPはグルタチオン代謝に関わり、上昇は酸化ストレスの高まりを反映するとの見方もある。ASTやALTと合わせて肝臓の状態を総合的に評価する。",
+    "high": "アルコール多飲、脂肪肝、胆道疾患、薬剤で上昇。",
+    "low": "特に問題となる低下はない。",
+    "nutrients": ["たんぱく質"],
+    "related": ["ast", "alt", "che"],
+    "tags": ["肝機能", "アルコール", "酸化ストレス"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "hba1c",
+    "term": "HbA1c",
+    "reading": "へもぐろびんえーわんしー",
+    "abbr": "HbA1c",
+    "unit": "%",
+    "category": "glucose",
+    "reference": "4.6–5.5%（NGSP）程度、6.5%以上で糖尿病型",
+    "optimal": "過去1〜2か月の平均血糖を反映。5%台前半が目安。鉄欠乏があると見かけ上変動しうる。",
+    "summary": "過去1〜2か月の平均血糖を反映する指標。糖尿病の診断・管理に用いる。",
+    "description": "HbA1cはヘモグロビンにブドウ糖が結合した割合で、赤血球の寿命に応じて過去1〜2か月の平均血糖状態を反映する。空腹時血糖が正常でもHbA1cが高めなら食後高血糖や血糖変動を疑う。鉄欠乏性貧血では見かけ上高く、溶血や出血後では低く出ることがあり、貧血指標と合わせて解釈する。",
+    "high": "糖尿病、耐糖能異常、鉄欠乏（見かけ上）で上昇。",
+    "low": "溶血、出血・輸血後、赤血球寿命短縮で見かけ上低下。",
+    "nutrients": ["食物繊維", "マグネシウム", "クロム"],
+    "related": ["fasting-glucose", "alt", "triglyceride", "hemoglobin", "ferritin"],
+    "tags": ["血糖", "糖尿病", "インスリン抵抗性"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "fasting-glucose",
+    "term": "空腹時血糖",
+    "reading": "くうふくじけっとう",
+    "abbr": "FBS / FPG",
+    "unit": "mg/dL",
+    "category": "glucose",
+    "reference": "70–99 が正常、100–125 で境界、126以上で糖尿病型",
+    "optimal": "80–90台を目安に。HbA1cやインスリンと合わせて血糖変動・抵抗性を評価。",
+    "summary": "絶食後の血糖値。糖代謝とインスリンの効き具合を反映する。",
+    "description": "空腹時血糖は10時間以上絶食後の血糖値で、糖代謝の基本指標。100〜125mg/dLは空腹時血糖異常（境界型）、126以上が続けば糖尿病型と判定される。HbA1cが平均像を、空腹時血糖がその時点の状態を示すため、両者を組み合わせるとより正確に評価できる。低血糖傾向（食後の乱高下）は機能性低血糖として不定愁訴の一因になることがある。",
+    "high": "糖尿病、耐糖能異常、ストレス、ステロイド使用で上昇。",
+    "low": "反応性（機能性）低血糖、絶食、一部の内分泌疾患で低下。",
+    "nutrients": ["食物繊維", "マグネシウム", "たんぱく質"],
+    "related": ["hba1c", "triglyceride", "alt"],
+    "tags": ["血糖", "糖尿病", "低血糖"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "ldl-c",
+    "term": "LDLコレステロール",
+    "reading": "えるでぃーえるこれすてろーる",
+    "abbr": "LDL-C",
+    "unit": "mg/dL",
+    "category": "lipid",
+    "reference": "60–119 が基準、140以上で高LDL",
+    "optimal": "数値だけでなく粒子サイズや酸化の程度、HDL・中性脂肪とのバランスで評価する考え方がある。",
+    "summary": "肝臓から末梢へコレステロールを運ぶリポ蛋白。過剰・酸化で動脈硬化に関与。",
+    "description": "LDLコレステロールは肝臓から全身へコレステロールを運ぶ。過剰かつ酸化されると血管壁に蓄積し動脈硬化を進める一方、コレステロール自体は細胞膜やホルモン、ビタミンDの材料でもある。精密栄養学では総量だけでなく、小型LDLの割合や酸化ストレス、HDL・中性脂肪とのバランス（例: 中性脂肪/HDL比）を重視することがある。",
+    "high": "飽和脂肪の過剰、甲状腺機能低下、遺伝、糖代謝異常で上昇。",
+    "low": "低栄養、肝障害、甲状腺機能亢進、吸収不良で低下。極端な低値も注意。",
+    "nutrients": ["食物繊維", "オメガ3脂肪酸"],
+    "related": ["hdl-c", "triglyceride", "tsh"],
+    "tags": ["脂質", "動脈硬化", "コレステロール"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "hdl-c",
+    "term": "HDLコレステロール",
+    "reading": "えいちでぃーえるこれすてろーる",
+    "abbr": "HDL-C",
+    "unit": "mg/dL",
+    "category": "lipid",
+    "reference": "40以上が目安（低いほどリスク）",
+    "optimal": "低値はインスリン抵抗性や運動不足を示唆。中性脂肪とのバランスで代謝を評価。",
+    "summary": "余分なコレステロールを回収する『善玉』。低いと動脈硬化リスクが上がる。",
+    "description": "HDLコレステロールは末梢から余分なコレステロールを肝臓へ回収する働きを持ち、いわゆる善玉。低値は運動不足・喫煙・肥満・インスリン抵抗性・高中性脂肪と関連し、動脈硬化のリスクとなる。中性脂肪が高くHDLが低い組み合わせはインスリン抵抗性を示唆し、糖代謝指標と合わせて評価する。",
+    "high": "運動、適量の脂質摂取で上昇。高値は一般に良好とされる。",
+    "low": "運動不足、喫煙、肥満、高中性脂肪、インスリン抵抗性で低下。",
+    "nutrients": ["オメガ3脂肪酸"],
+    "related": ["ldl-c", "triglyceride", "hba1c"],
+    "tags": ["脂質", "善玉", "インスリン抵抗性"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "triglyceride",
+    "term": "中性脂肪（TG）",
+    "reading": "ちゅうせいしぼう",
+    "abbr": "TG",
+    "unit": "mg/dL",
+    "category": "lipid",
+    "reference": "30–149 が基準、150以上で高値",
+    "optimal": "糖質過剰・インスリン抵抗性で上昇。TG/HDL比は代謝の目安になる考え方がある。",
+    "summary": "エネルギー源となる脂肪。糖質のとりすぎや飲酒、インスリン抵抗性で上昇する。",
+    "description": "中性脂肪（トリグリセリド）は食事由来や肝臓で合成される脂肪で、エネルギー源となる。糖質・アルコールの過剰摂取やインスリン抵抗性で上昇し、HDL低下を伴いやすい。中性脂肪 ÷ HDL の比はインスリン抵抗性のおおまかな目安として参照されることがある。逆に極端な低値は低栄養や吸収不良を示すこともある。",
+    "high": "糖質・アルコール過剰、肥満、インスリン抵抗性、脂質異常症で上昇。",
+    "low": "低栄養、吸収不良、甲状腺機能亢進で低下。",
+    "nutrients": ["オメガ3脂肪酸", "食物繊維"],
+    "related": ["hdl-c", "ldl-c", "hba1c", "fasting-glucose"],
+    "tags": ["脂質", "インスリン抵抗性", "糖質"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "zinc",
+    "term": "亜鉛（Zn）",
+    "reading": "あえん",
+    "abbr": "Zn",
+    "unit": "µg/dL",
+    "category": "mineral",
+    "reference": "80–130 程度",
+    "optimal": "精密栄養学では 100 前後を目安に、味覚・皮膚・免疫・たんぱく代謝の評価に用いる。",
+    "summary": "多くの酵素の補因子となる必須微量元素。不足で味覚障害・皮膚症状・免疫低下。",
+    "description": "亜鉛は300種以上の酵素の補因子で、たんぱく質合成・DNA合成・免疫・味覚・皮膚や粘膜の健康に関わる。不足すると味覚障害・脱毛・皮膚炎・傷の治りにくさ・免疫低下・成長障害が起こりうる。アルブミンと結合して運ばれるため低アルブミンでは見かけ上低くなる。銅とは拮抗関係にあり、亜鉛過剰は銅欠乏を招くためバランスが重要。",
+    "high": "サプリの過剰摂取で上昇（銅欠乏に注意）。",
+    "low": "摂取不足、吸収不良、消化管疾患、慢性下痢、需要増大で低下。",
+    "nutrients": ["亜鉛", "たんぱく質"],
+    "related": ["copper", "albumin", "alt"],
+    "tags": ["ミネラル", "味覚", "免疫", "皮膚"],
+    "sources": [
+      { "title": "血液検査からわかること | あんどう口腔クリニック", "url": "https://orthomolecular-health.jp/kensa/" }
+    ]
+  },
+  {
+    "id": "copper",
+    "term": "銅（Cu）",
+    "reading": "どう",
+    "abbr": "Cu",
+    "unit": "µg/dL",
+    "category": "mineral",
+    "reference": "70–130 程度",
+    "optimal": "亜鉛との比（Zn/Cu比）で評価する考え方がある。炎症・エストロゲンで上昇。",
+    "summary": "鉄代謝や抗酸化に関わる必須微量元素。亜鉛と拮抗しバランスが大切。",
+    "description": "銅は鉄の利用（セルロプラスミンを介した鉄の輸送）や抗酸化酵素、結合組織の生成に関わる。亜鉛と拮抗するため、亜鉛の過剰摂取は銅欠乏を招き、貧血や神経症状の原因になる。炎症・感染・妊娠・エストロゲン（経口避妊薬）で上昇する。亜鉛との比（Zn/Cu比）は栄養バランスの評価に用いられることがある。",
+    "high": "炎症・感染、妊娠、経口避妊薬、亜鉛欠乏、肝疾患で上昇。",
+    "low": "亜鉛の過剰摂取、吸収不良、まれな遺伝性疾患で低下。",
+    "nutrients": ["銅"],
+    "related": ["zinc", "ferritin", "hemoglobin"],
+    "tags": ["ミネラル", "鉄代謝", "抗酸化"],
+    "sources": [
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  },
+  {
+    "id": "vitamin-d",
+    "term": "ビタミンD（25-OH）",
+    "reading": "びたみんでぃー",
+    "abbr": "25(OH)D",
+    "unit": "ng/mL",
+    "category": "vitamin",
+    "reference": "30以上で充足、20–30で不足、20未満で欠乏",
+    "optimal": "精密栄養学では概ね 40–60 を目安とする考え方がある。日本人は不足が多い。",
+    "summary": "骨・免疫・気分に関わる脂溶性ビタミン。血中25-OH体で充足度を評価する。",
+    "description": "ビタミンDは日光（紫外線）を浴びて皮膚で作られ、食事からも摂取する脂溶性ビタミン。カルシウム吸収・骨代謝だけでなく、免疫調整や気分にも関与する。充足度は貯蔵型の25(OH)Dで評価し、日本人は不足・欠乏が多い。欠乏は骨粗鬆症・易感染・倦怠感・気分の落ち込みと関連する。過剰摂取では高カルシウム血症に注意。",
+    "high": "サプリの過剰摂取で上昇（高カルシウム血症に注意）。",
+    "low": "日照不足、摂取不足、肥満、吸収不良、加齢で低下。",
+    "nutrients": ["ビタミンD", "マグネシウム", "カルシウム"],
+    "related": ["ldl-c", "albumin"],
+    "tags": ["ビタミン", "骨", "免疫", "気分"],
+    "sources": [
+      { "title": "栄養状態を調べる血液検査 | プラスウェルネス", "url": "https://www.pluswellness.com/dictionary/checkup/004006.html" }
+    ]
+  },
+  {
+    "id": "crp",
+    "term": "CRP（C反応性蛋白）",
+    "reading": "しーあーるぴー",
+    "abbr": "CRP",
+    "unit": "mg/dL",
+    "category": "inflammation",
+    "reference": "0.30 未満程度",
+    "optimal": "栄養指標（特にフェリチン）の解釈に不可欠。慢性微小炎症の有無を確認する。",
+    "summary": "体内の炎症で上昇する急性期蛋白。他の栄養指標を解釈する前提として重要。",
+    "description": "CRPは炎症や組織障害があると肝臓で作られ数時間〜数日で上昇する急性期蛋白。感染・外傷・炎症性疾患で顕著に上がるほか、肥満やストレスで軽度に持続する『慢性微小炎症』でもわずかに上昇する。フェリチンなど炎症で変動する指標を解釈する際は、まずCRPで炎症の有無を確認することが重要。高感度CRP（hs-CRP）は動脈硬化リスクの評価にも用いられる。",
+    "high": "感染、炎症性疾患、外傷・手術後、悪性腫瘍、肥満・喫煙による微小炎症で上昇。",
+    "low": "低値は炎症がない状態で望ましい。",
+    "nutrients": ["オメガ3脂肪酸", "ビタミンD"],
+    "related": ["ferritin", "albumin", "platelet", "total-protein"],
+    "tags": ["炎症", "急性期蛋白", "酸化ストレス"],
+    "sources": [
+      { "title": "血液検査 | 日本人間ドック・予防医療学会", "url": "https://www.ningen-dock.jp/inspection_blood/" }
+    ]
+  },
+  {
+    "id": "tsh",
+    "term": "甲状腺刺激ホルモン（TSH）",
+    "reading": "こうじょうせんしげきほるもん",
+    "abbr": "TSH",
+    "unit": "µIU/mL",
+    "category": "thyroid",
+    "reference": "0.5–5.0 程度",
+    "optimal": "FT4・FT3と合わせて評価。高値は機能低下、低値は機能亢進を示唆する。",
+    "summary": "脳から甲状腺へ指令を出すホルモン。甲状腺機能のスクリーニングに使う。",
+    "description": "TSHは下垂体から分泌され甲状腺ホルモンの産生を促す。甲状腺機能が低下するとTSHは代償的に上昇し、機能が亢進すると低下する（ネガティブフィードバック）。甲状腺機能低下では代謝が落ち、倦怠感・冷え・体重増加・LDL上昇・脱毛などが起こりうる。鉄・亜鉛・セレン・ヨウ素は甲状腺ホルモンの合成・活性化に関与するため、栄養状態とも関連する。",
+    "high": "甲状腺機能低下症（橋本病など）で上昇。",
+    "low": "甲状腺機能亢進症（バセドウ病など）で低下。",
+    "nutrients": ["ヨウ素", "セレン", "鉄", "亜鉛"],
+    "related": ["ft4", "ldl-c", "ferritin"],
+    "tags": ["甲状腺", "代謝", "ホルモン"],
+    "sources": [
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  },
+  {
+    "id": "ft4",
+    "term": "遊離サイロキシン（FT4）",
+    "reading": "ゆうりさいろきしん",
+    "abbr": "FT4",
+    "unit": "ng/dL",
+    "category": "thyroid",
+    "reference": "0.9–1.7 程度",
+    "optimal": "TSHと合わせて甲状腺機能を評価。末梢でFT3へ変換され作用する。",
+    "summary": "甲状腺から分泌される主要ホルモンの遊離型。TSHと組み合わせて機能を評価する。",
+    "description": "FT4はタンパクに結合していない活性型の甲状腺ホルモンで、末梢組織で活性の高いFT3に変換されて作用する。TSHと組み合わせて甲状腺機能を判定し、TSH高値×FT4低値で機能低下、TSH低値×FT4高値で機能亢進と評価する。FT4からFT3への変換にはセレンや鉄などの栄養素が関与する。",
+    "high": "甲状腺機能亢進症で上昇。",
+    "low": "甲状腺機能低下症で低下。",
+    "nutrients": ["セレン", "ヨウ素", "鉄"],
+    "related": ["tsh", "ldl-c"],
+    "tags": ["甲状腺", "ホルモン", "代謝"],
+    "sources": [
+      { "title": "awesome-biomarkers (markwk)", "url": "https://github.com/markwk/awesome-biomarkers" }
+    ]
+  }
+]
