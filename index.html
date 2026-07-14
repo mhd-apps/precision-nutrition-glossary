@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>精密栄養学 用語辞書 | 血液検査データのてびき</title>
+<meta name="description" content="精密栄養学・オーソモレキュラー栄養療法における血液検査の各データを手軽に調べ、項目どうしの関連をたどれる用語辞書。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A9%B8%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #fbf7f0;
+    --card: #ffffff;
+    --card-2: #fdf9f3;
+    --ink: #33302b;
+    --ink-soft: #6b655c;
+    --line: #ece4d8;
+    --accent: #c0563b;
+    --accent-soft: #f3e2dc;
+    --chip: #f1eae0;
+    --shadow: 0 2px 10px rgba(80, 60, 40, 0.06);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #201d1a;
+      --card: #2a2622;
+      --card-2: #2f2a25;
+      --ink: #ece6dd;
+      --ink-soft: #b3aa9c;
+      --line: #3c352e;
+      --accent: #e08063;
+      --accent-soft: #3a2a24;
+      --chip: #362f28;
+      --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 80px; }
+  header.site {
+    padding: 22px 0 14px;
+    position: sticky; top: 0; z-index: 20;
+    background: linear-gradient(var(--bg) 78%, rgba(251,247,240,0));
+  }
+  @media (prefers-color-scheme: dark) {
+    header.site { background: linear-gradient(var(--bg) 78%, rgba(32,29,26,0)); }
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; cursor: pointer; }
+  .brand h1 { font-size: 1.25rem; margin: 0; letter-spacing: .01em; }
+  .brand .sub { font-size: .78rem; color: var(--ink-soft); }
+  .search-box { position: relative; margin-top: 14px; }
+  .search-box input {
+    width: 100%; padding: 12px 40px 12px 42px;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: var(--card); color: var(--ink);
+    font-size: 1rem; box-shadow: var(--shadow); outline: none;
+  }
+  .search-box input:focus { border-color: var(--accent); }
+  .search-box .icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--ink-soft); font-size: 1rem; }
+  .search-box .clear { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); border: none; background: transparent; color: var(--ink-soft); font-size: 1.1rem; cursor: pointer; display: none; }
+  .search-box .clear.show { display: block; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+  .chip {
+    border: 1px solid var(--line); background: var(--card);
+    color: var(--ink-soft); border-radius: 999px;
+    padding: 6px 13px; font-size: .82rem; cursor: pointer;
+    transition: all .12s ease; white-space: nowrap;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--ink); }
+  .chip.active { color: #fff; border-color: transparent; }
+  .count { color: var(--ink-soft); font-size: .8rem; margin: 8px 2px 2px; }
+
+  .cat-group { margin-top: 26px; }
+  .cat-head { display: flex; align-items: center; gap: 9px; margin: 0 2px 10px; }
+  .cat-dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+  .cat-head h2 { font-size: 1.02rem; margin: 0; }
+  .cat-head .cat-desc { font-size: .78rem; color: var(--ink-soft); margin: 2px 0 0; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  .term-card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 14px 15px;
+    cursor: pointer; box-shadow: var(--shadow);
+    transition: transform .12s ease, border-color .12s ease;
+    border-left: 4px solid var(--line);
+  }
+  .term-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .term-card .t-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .term-card .t-name { font-weight: 700; font-size: 1.02rem; }
+  .term-card .t-abbr { font-size: .72rem; color: var(--ink-soft); font-family: ui-monospace, Menlo, Consolas, monospace; }
+  .term-card .t-sum { font-size: .83rem; color: var(--ink-soft); margin-top: 6px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+  .empty { text-align: center; color: var(--ink-soft); padding: 50px 10px; }
+
+  /* Detail view */
+  .back-bar { display: flex; align-items: center; gap: 6px; margin: 6px 0 16px; }
+  .back-btn {
+    border: 1px solid var(--line); background: var(--card); color: var(--ink);
+    border-radius: 999px; padding: 7px 15px; font-size: .85rem; cursor: pointer;
+  }
+  .back-btn:hover { border-color: var(--accent); }
+  .detail-card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow);
+    border-top: 5px solid var(--accent);
+  }
+  .d-cat { display: inline-flex; align-items: center; gap: 7px; font-size: .8rem; color: var(--ink-soft); }
+  .d-name { font-size: 1.7rem; margin: 8px 0 2px; font-weight: 800; }
+  .d-reading { font-size: .8rem; color: var(--ink-soft); }
+  .d-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 14px 0; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .d-meta div { font-size: .88rem; }
+  .d-meta .lbl { color: var(--ink-soft); font-size: .72rem; display: block; }
+  .d-meta .val { font-family: ui-monospace, Menlo, Consolas, monospace; }
+  .sec { margin-top: 18px; }
+  .sec h3 { font-size: .82rem; color: var(--accent); margin: 0 0 5px; letter-spacing: .03em; text-transform: none; }
+  .sec p { margin: 0; font-size: .93rem; }
+  .hl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+  @media (max-width: 560px) { .hl-grid { grid-template-columns: 1fr; } }
+  .hl {
+    background: var(--card-2); border: 1px solid var(--line);
+    border-radius: 10px; padding: 12px 14px; font-size: .9rem;
+  }
+  .hl.up { border-left: 4px solid #c0563b; }
+  .hl.down { border-left: 4px solid #3e8e7e; }
+  .hl b { display: block; font-size: .78rem; color: var(--ink-soft); margin-bottom: 3px; }
+  .tagrow { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+  .tag { font-size: .76rem; background: var(--chip); color: var(--ink-soft); padding: 3px 10px; border-radius: 999px; }
+  .nutri { font-size: .76rem; background: var(--accent-soft); color: var(--accent); padding: 3px 10px; border-radius: 999px; }
+  .related-list { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+  .rel-item {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card-2); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 13px; cursor: pointer;
+    transition: border-color .12s ease, transform .12s ease;
+  }
+  .rel-item:hover { border-color: var(--accent); transform: translateX(2px); }
+  .rel-item .rel-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .rel-item .rel-name { font-weight: 600; font-size: .92rem; }
+  .rel-item .rel-sum { font-size: .78rem; color: var(--ink-soft); margin-top: 1px; }
+  .rel-item .arrow { margin-left: auto; color: var(--ink-soft); }
+  .sources a { color: var(--accent); font-size: .82rem; text-decoration: none; display: block; margin-top: 4px; }
+  .sources a:hover { text-decoration: underline; }
+  .disclaimer { font-size: .76rem; color: var(--ink-soft); margin-top: 30px; padding: 14px; border: 1px dashed var(--line); border-radius: 10px; }
+  footer { text-align: center; color: var(--ink-soft); font-size: .76rem; margin-top: 40px; }
+  .hidden { display: none !important; }
+  a.plain { color: inherit; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <div class="brand" id="brandHome">
+      <h1>精密栄養学 用語辞書</h1>
+      <span class="sub">血液検査データのてびき</span>
+    </div>
+    <div class="search-box" id="searchWrap">
+      <span class="icon">🔍</span>
+      <input id="search" type="search" placeholder="用語・略称・かな・タグで検索（例: 鉄, ferritin, ふぇりちん）" autocomplete="off" spellcheck="false">
+      <button class="clear" id="clearBtn" aria-label="クリア">×</button>
+    </div>
+  </header>
+
+  <!-- List view -->
+  <main id="listView">
+    <div class="chips" id="catChips"></div>
+    <div class="count" id="count"></div>
+    <div id="results"></div>
+  </main>
+
+  <!-- Detail view -->
+  <main id="detailView" class="hidden">
+    <div class="back-bar">
+      <button class="back-btn" id="backBtn">← 一覧へ戻る</button>
+    </div>
+    <div id="detailBody"></div>
+  </main>
+
+  <footer>
+    精密栄養学 用語辞書 &middot; mhd-apps &middot; データは
+    <a class="plain" href="data/terms.json" style="text-decoration:underline">terms.json</a>
+    で管理
+  </footer>
+</div>
+
+<script>
+"use strict";
+
+let TERMS = [];
+let CATEGORIES = [];
+let CAT_MAP = {};       // id -> category object
+let TERM_MAP = {};      // id -> term object
+let activeCat = "all";  // "all" or category id
+let query = "";
+
+const $ = (id) => document.getElementById(id);
+
+function escapeHtml(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+async function load() {
+  try {
+    const [t, c] = await Promise.all([
+      fetch("data/terms.json").then((r) => r.json()),
+      fetch("data/categories.json").then((r) => r.json()),
+    ]);
+    TERMS = t;
+    CATEGORIES = c;
+    CAT_MAP = Object.fromEntries(c.map((x) => [x.id, x]));
+    TERM_MAP = Object.fromEntries(t.map((x) => [x.id, x]));
+    renderChips();
+    route();
+  } catch (e) {
+    $("results").innerHTML =
+      '<div class="empty">データの読み込みに失敗しました。<br>ローカルで開く場合は簡易サーバ（例: <code>python3 -m http.server</code>）経由で表示してください。</div>';
+    console.error(e);
+  }
+}
+
+/* ---------- List rendering ---------- */
+
+function renderChips() {
+  const chips = ['<button class="chip' + (activeCat === "all" ? " active" : "") +
+    '" data-cat="all"' + (activeCat === "all" ? ' style="background:var(--accent)"' : "") +
+    ">すべて</button>"];
+  CATEGORIES.forEach((c) => {
+    const on = activeCat === c.id;
+    chips.push(
+      '<button class="chip' + (on ? " active" : "") + '" data-cat="' + c.id + '"' +
+      (on ? ' style="background:' + c.color + '"' : "") + ">" +
+      escapeHtml(c.name) + "</button>"
+    );
+  });
+  $("catChips").innerHTML = chips.join("");
+  $("catChips").querySelectorAll(".chip").forEach((el) => {
+    el.addEventListener("click", () => {
+      activeCat = el.dataset.cat;
+      renderChips();
+      renderList();
+    });
+  });
+}
+
+function matchesQuery(t, q) {
+  if (!q) return true;
+  const hay = [
+    t.term, t.reading, t.abbr, t.summary, t.description,
+    (t.tags || []).join(" "), (t.nutrients || []).join(" "),
+    (CAT_MAP[t.category] || {}).name,
+  ].join(" ").toLowerCase();
+  return q.toLowerCase().split(/\s+/).every((w) => hay.indexOf(w) >= 0);
+}
+
+function renderList() {
+  const q = query.trim();
+  const filtered = TERMS.filter(
+    (t) => (activeCat === "all" || t.category === activeCat) && matchesQuery(t, q)
+  );
+  $("count").textContent = filtered.length + " 件";
+
+  if (filtered.length === 0) {
+    $("results").innerHTML = '<div class="empty">該当する用語が見つかりませんでした。</div>';
+    return;
+  }
+
+  // group by category, in category-definition order
+  const order = CATEGORIES.map((c) => c.id);
+  const groups = {};
+  filtered.forEach((t) => (groups[t.category] = groups[t.category] || []).push(t));
+
+  const html = order
+    .filter((cid) => groups[cid])
+    .map((cid) => {
+      const cat = CAT_MAP[cid];
+      const cards = groups[cid].map(cardHtml).join("");
+      return (
+        '<section class="cat-group">' +
+        '<div class="cat-head"><span class="cat-dot" style="background:' + cat.color + '"></span>' +
+        "<div><h2>" + escapeHtml(cat.name) + "</h2>" +
+        '<p class="cat-desc">' + escapeHtml(cat.description) + "</p></div></div>" +
+        '<div class="grid">' + cards + "</div></section>"
+      );
+    })
+    .join("");
+  $("results").innerHTML = html;
+
+  $("results").querySelectorAll(".term-card").forEach((el) => {
+    el.addEventListener("click", () => { location.hash = "#/term/" + el.dataset.id; });
+  });
+}
+
+function cardHtml(t) {
+  const cat = CAT_MAP[t.category] || { color: "var(--line)" };
+  return (
+    '<div class="term-card" data-id="' + escapeHtml(t.id) + '" style="border-left-color:' + cat.color + '">' +
+    '<div class="t-top"><span class="t-name">' + escapeHtml(t.term) + "</span>" +
+    '<span class="t-abbr">' + escapeHtml(t.abbr || "") + "</span></div>" +
+    '<div class="t-sum">' + escapeHtml(t.summary || "") + "</div></div>"
+  );
+}
+
+/* ---------- Detail rendering ---------- */
+
+function renderDetail(id) {
+  const t = TERM_MAP[id];
+  if (!t) { location.hash = ""; return; }
+  const cat = CAT_MAP[t.category] || { name: "", color: "var(--accent)" };
+
+  const meta = [];
+  if (t.unit) meta.push(metaCell("単位", t.unit));
+  if (t.reference) meta.push(metaCell("一般的な基準範囲", t.reference));
+  if (t.optimal) meta.push(metaCell("精密栄養学での目安", t.optimal));
+
+  const nutri = (t.nutrients || [])
+    .map((n) => '<span class="nutri">🥗 ' + escapeHtml(n) + "</span>").join("");
+  const tags = (t.tags || [])
+    .map((n) => '<span class="tag">#' + escapeHtml(n) + "</span>").join("");
+
+  const related = (t.related || [])
+    .map((rid) => TERM_MAP[rid]).filter(Boolean)
+    .map((r) => {
+      const rc = CAT_MAP[r.category] || { color: "var(--line)" };
+      return (
+        '<div class="rel-item" data-id="' + escapeHtml(r.id) + '">' +
+        '<span class="rel-dot" style="background:' + rc.color + '"></span>' +
+        '<div><div class="rel-name">' + escapeHtml(r.term) + "</div>" +
+        '<div class="rel-sum">' + escapeHtml(r.summary || "") + "</div></div>" +
+        '<span class="arrow">→</span></div>'
+      );
+    }).join("");
+
+  const sources = (t.sources || [])
+    .map((s) => '<a href="' + escapeHtml(s.url) + '" target="_blank" rel="noopener">🔗 ' + escapeHtml(s.title) + "</a>")
+    .join("");
+
+  $("detailBody").innerHTML =
+    '<article class="detail-card" style="border-top-color:' + cat.color + '">' +
+    '<span class="d-cat"><span class="cat-dot" style="background:' + cat.color + '"></span>' +
+    escapeHtml(cat.name) + "</span>" +
+    '<div class="d-name">' + escapeHtml(t.term) +
+    (t.abbr ? ' <span class="t-abbr" style="font-size:1rem">' + escapeHtml(t.abbr) + "</span>" : "") +
+    "</div>" +
+    (t.reading ? '<div class="d-reading">' + escapeHtml(t.reading) + "</div>" : "") +
+    (meta.length ? '<div class="d-meta">' + meta.join("") + "</div>" : "") +
+    (t.summary ? '<div class="sec"><p>' + escapeHtml(t.summary) + "</p></div>" : "") +
+    (t.description ? '<div class="sec"><h3>解説</h3><p>' + escapeHtml(t.description) + "</p></div>" : "") +
+    ((t.high || t.low)
+      ? '<div class="hl-grid">' +
+        (t.high ? '<div class="hl up"><b>▲ 高値のとき</b>' + escapeHtml(t.high) + "</div>" : "") +
+        (t.low ? '<div class="hl down"><b>▼ 低値のとき</b>' + escapeHtml(t.low) + "</div>" : "") +
+        "</div>"
+      : "") +
+    (nutri ? '<div class="sec"><h3>関連する栄養素</h3><div class="tagrow">' + nutri + "</div></div>" : "") +
+    (related ? '<div class="sec"><h3>関連する検査項目</h3><div class="related-list">' + related + "</div></div>" : "") +
+    (tags ? '<div class="sec"><div class="tagrow">' + tags + "</div></div>" : "") +
+    (sources ? '<div class="sec sources"><h3>参考</h3>' + sources + "</div>" : "") +
+    "</article>" +
+    '<div class="disclaimer">※ 本辞書は精密栄養学の学習・情報整理を目的とした一般的な解説です。基準範囲は施設や測定法で異なり、数値の解釈や診断・治療は必ず医師・専門家にご相談ください。</div>';
+
+  $("detailBody").querySelectorAll(".rel-item").forEach((el) => {
+    el.addEventListener("click", () => { location.hash = "#/term/" + el.dataset.id; });
+  });
+}
+
+function metaCell(lbl, val) {
+  return '<div><span class="lbl">' + escapeHtml(lbl) + '</span><span class="val">' + escapeHtml(val) + "</span></div>";
+}
+
+/* ---------- Routing ---------- */
+
+function route() {
+  const m = location.hash.match(/^#\/term\/(.+)$/);
+  if (m) {
+    const id = decodeURIComponent(m[1]);
+    $("listView").classList.add("hidden");
+    $("searchWrap").classList.add("hidden");
+    $("detailView").classList.remove("hidden");
+    renderDetail(id);
+    window.scrollTo(0, 0);
+  } else {
+    $("detailView").classList.add("hidden");
+    $("searchWrap").classList.remove("hidden");
+    $("listView").classList.remove("hidden");
+    renderList();
+  }
+}
+
+/* ---------- Wire up ---------- */
+
+$("search").addEventListener("input", (e) => {
+  query = e.target.value;
+  $("clearBtn").classList.toggle("show", query.length > 0);
+  if (!location.hash.startsWith("#/term/")) renderList();
+});
+$("clearBtn").addEventListener("click", () => {
+  query = "";
+  $("search").value = "";
+  $("clearBtn").classList.remove("show");
+  $("search").focus();
+  renderList();
+});
+$("backBtn").addEventListener("click", () => { location.hash = ""; });
+$("brandHome").addEventListener("click", () => { location.hash = ""; });
+window.addEventListener("hashchange", route);
+
+load();
+</script>
+</body>
+</html>
